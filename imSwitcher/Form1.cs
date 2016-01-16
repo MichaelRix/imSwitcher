@@ -14,6 +14,12 @@ namespace imSwitcher
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Reads a key under HKEY_CURRENT_USER.
+        /// </summary>
+        /// <param name="SubKey">The subkey path to read.</param>
+        /// <param name="KeyName">The subkey name.</param>
+        /// <returns></returns>
         private string ReadReg(string SubKey, string KeyName)
         {
             RegistryKey HKCU = Registry.CurrentUser;
@@ -22,6 +28,13 @@ namespace imSwitcher
             return data;
         }
 
+        /// <summary>
+        /// Writes a subkey to HKEY_CURRENT_USER
+        /// </summary>
+        /// <param name="SubKey">The subkey path to write.</param>
+        /// <param name="KeyName">The subkey name.</param>
+        /// <param name="value">Expected value.</param>
+        /// <param name="type">RegistryValueKind</param>
         private void WriteReg(string SubKey, string KeyName, string value, RegistryValueKind type)
         {
             RegistryKey HKCU = Registry.CurrentUser;
@@ -29,6 +42,9 @@ namespace imSwitcher
             Reg.SetValue(KeyName, value, type);
         }
 
+        /// <summary>
+        /// Which checks the registry and help fill the checklist.
+        /// </summary>
         private void LoadInitialSettings()
         {
             string[] a = new String[4];
@@ -42,6 +58,10 @@ namespace imSwitcher
             }
         }
 
+        /// <summary>
+        /// Prevent loading after an existing process.
+        /// Load initialization value from the registry to choose the icon.
+        /// </summary>
         private void Form_Load(object sender, EventArgs e)
         {
             if (System.Diagnostics.Process.GetProcessesByName("imSwitcher").ToList().Count > 1)
@@ -66,6 +86,9 @@ namespace imSwitcher
             Visible = false;
         }
 
+        /// <summary>
+        /// When LMB clicked, switch the charset.
+        /// </summary>
         private void Notify_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -87,21 +110,18 @@ namespace imSwitcher
             }
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
+        /// <summary>
+        /// Let's do some 引流 by using a glass stick.
+        /// </summary>
         private void SiteLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://www.nottres.com");
         }
 
-        private void showToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Visible = true;
-        }
-
+        /// <summary>
+        /// There's no way to escape,
+        /// But you can hide the main window.
+        /// </summary>
         private void Form_FormClosing(object sender, FormClosingEventArgs e)
         {
             if(Visible == true)
@@ -111,6 +131,27 @@ namespace imSwitcher
             }
         }
 
+        private void showToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Visible = true;
+        }
+
+        /// <summary>
+        /// Shows the about dialog.
+        /// </summary>
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("imSwitcher\nWin 8+輸入法便捷工具\nMade by Michael\n你再也不用進行繁瑣的簡繁切換了！\nhttps://www.nottres.com", "關於 imSwitcher", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        /// <summary>
+        /// When settings changed, apply it to the registry.
+        /// </summary>
         private void Settings_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             string value = e.NewValue == CheckState.Checked ? "1" : "0";
@@ -132,11 +173,6 @@ namespace imSwitcher
                     break;
             }
             WriteReg("SOFTWARE\\Microsoft\\InputMethod\\Settings\\CHS", KeyName, value, RegistryValueKind.DWord);
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("imSwitcher\nWin 8+輸入法便捷工具\nMade by Michael\nhttps://www.nottres.com", "關於 imSwitcher", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
