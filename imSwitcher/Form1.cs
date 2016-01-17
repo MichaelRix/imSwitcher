@@ -1,8 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using Microsoft.Win32;
+using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows.Forms;
-using Microsoft.Win32;
 namespace imSwitcher
 {
     public partial class Form : System.Windows.Forms.Form
@@ -24,6 +24,7 @@ namespace imSwitcher
         {
             RegistryKey HKCU = Registry.CurrentUser;
             RegistryKey Reg = HKCU.OpenSubKey(SubKey);
+            if (Reg == null) return null;
             string data = Reg.GetValue(KeyName).ToString();
             return data;
         }
@@ -66,12 +67,18 @@ namespace imSwitcher
         {
             if (System.Diagnostics.Process.GetProcessesByName("imSwitcher").ToList().Count > 1)
             {
-                MessageBox.Show("There is already an instance of imSwitcher running...\nPlease notice your notify bar.");
                 Visible = false;
+                MessageBox.Show("There is already an instance of imSwitcher running...\nPlease notice your notify bar.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Application.Exit();
             }
 
             UseCHT = ReadReg("SOFTWARE\\Microsoft\\InputMethod\\Settings\\CHS", "Output CharSet");
+            if(UseCHT == null)
+            {
+                Visible = false;
+                MessageBox.Show("Your system appears to be unsupported by this program.\nYou must have a Windows 8+ with Microsoft Pinyin IME.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
             if(UseCHT == "0")
             {
                 Notify.Text = "MSPY - " + "CHS";
