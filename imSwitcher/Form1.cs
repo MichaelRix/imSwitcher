@@ -148,7 +148,7 @@ namespace imSwitcher
         /// </summary>
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("imSwitcher\nWin 8+輸入法便捷工具\nMade by Michael\n你再也不用進行繁瑣的簡繁切換了！\nhttps://www.nottres.com", "關於 imSwitcher", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("imSwitcher VERSION1.1.1.2\nWin 8+輸入法便捷工具\nMade by Michael\n你再也不用進行繁瑣的簡繁切換了！\nhttps://www.nottres.com", "關於 imSwitcher", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

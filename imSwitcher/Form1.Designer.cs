@@ -33,10 +33,10 @@
             this.Notify = new System.Windows.Forms.NotifyIcon(this.components);
             this.NotifyMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SiteLink = new System.Windows.Forms.LinkLabel();
             this.Settings = new System.Windows.Forms.CheckedListBox();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NotifyMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,19 +56,26 @@
             this.exitToolStripMenuItem});
             this.NotifyMenu.Name = "NotifyMenu";
             this.NotifyMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.NotifyMenu.Size = new System.Drawing.Size(153, 92);
+            this.NotifyMenu.Size = new System.Drawing.Size(122, 76);
             // 
             // showToolStripMenuItem
             // 
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
             this.showToolStripMenuItem.Text = "顯示(&S)";
             this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
+            this.aboutToolStripMenuItem.Text = "關於(&A)";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
             this.exitToolStripMenuItem.Text = "退出(&X)";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -101,13 +108,6 @@
             this.Settings.TabIndex = 2;
             this.Settings.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.Settings_ItemCheck);
             // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aboutToolStripMenuItem.Text = "關於(&A)";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -123,7 +123,7 @@
             this.MinimizeBox = false;
             this.Name = "Form";
             this.ShowInTaskbar = false;
-            this.Text = "imSwitcher ver1.1.1.2";
+            this.Text = "imSwitcher VERSION1.1.1.2";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
             this.Load += new System.EventHandler(this.Form_Load);
             this.Shown += new System.EventHandler(this.Form_Shown);
