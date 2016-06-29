@@ -56,34 +56,35 @@
             this.exitToolStripMenuItem});
             this.NotifyMenu.Name = "NotifyMenu";
             this.NotifyMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.NotifyMenu.Size = new System.Drawing.Size(122, 76);
+            this.NotifyMenu.Size = new System.Drawing.Size(117, 70);
             // 
             // showToolStripMenuItem
             // 
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.showToolStripMenuItem.Text = "顯示(&S)";
             this.showToolStripMenuItem.Click += new System.EventHandler(this.showToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "關於(&A)";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(121, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.exitToolStripMenuItem.Text = "退出(&X)";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // SiteLink
             // 
             this.SiteLink.AutoSize = true;
-            this.SiteLink.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.SiteLink.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.SiteLink.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.SiteLink.LinkColor = System.Drawing.Color.Teal;
             this.SiteLink.Location = new System.Drawing.Point(14, 149);
             this.SiteLink.Name = "SiteLink";
             this.SiteLink.Size = new System.Drawing.Size(149, 17);
@@ -94,7 +95,7 @@
             // 
             // Settings
             // 
-            this.Settings.Font = new System.Drawing.Font("微软雅黑", 10F);
+            this.Settings.Font = new System.Drawing.Font("Microsoft YaHei", 10F);
             this.Settings.FormattingEnabled = true;
             this.Settings.Items.AddRange(new object[] {
             "自動修正",
@@ -115,7 +116,7 @@
             this.ClientSize = new System.Drawing.Size(440, 178);
             this.Controls.Add(this.Settings);
             this.Controls.Add(this.SiteLink);
-            this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
